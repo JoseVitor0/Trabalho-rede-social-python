@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styleProf.css') }}">
+{% extends "perry.html" %}
+
+{% block  titulo%} profile {{user.username}}  {% endblock%}
+
+    
+
+
+{% block  body%}
+<div class="container">
+    <div class="profile">
+    <h1> Bem vindo, {{user.username}} </h1> <!--- {{ fotos }}-->
+
+    <br>
+    <a href=" {{ url_for('homepage') }}"> Home </a>
+    <br>
+
+    {% if form %}
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+
+        <h3>Escreva o texto da sua postagem: </h3>
+        <br>
+        {{ form.text }}
+        <br>
+        <h3>Insira sua foto: </h3>
+        <br>
+        {{ form.photo() }}
+        <br>
+        {{ form.btn }}
+        <br>
+    </form>
+    {% endif %}
+
+    {% include "navbar.html" %}
+    <a href="{{ url_for('posts') }}"><h3>Posts</h3> </a>
+        <br>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzlqNmR6amd0ZGFmc2VseW9zZXhlZjl2YTZ1NmVkeDlyanI2OWdwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PnPU9GhN3V7oVizSHG/giphy-downsized-large.gif">
+    </div>
+
+    <div class="postagens">
+    <h2>Minhas Publicações: </h2>
+    {% for post in user.posts %}
+        <!-- <img src="{{ url_for('static', filename='fotos_dos_posts/default.jpg') }}"> -->
+        <h3 class="txt">{{ post.post_Text }}</h3>
+        <img class="img-thumbnail rounded" src="{{ url_for('static', filename='fotos_dos_posts/{}'.format(post.post_image)) }}">
+        <form method="POST" action="{{ url_for('delete_post', post_id=post.id) }}">
+            <button type="submit">Delete</button>
+        </form>
+    {% endfor %}
+    </div>
+    </div>
+
+    <br>
+{% endblock%}

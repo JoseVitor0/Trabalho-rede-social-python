@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styleindex.css') }}">
+{% extends "perry.html" %}
+
+ {% block  titulo%} Página principal  {% endblock%}
+
+    
+
+    
+    
+{% block  body%}
+    <div class="titulo">
+        <h1>Bem Vindo ao FaceTwiGramKutTube</h1>
+        <h4>By: Messi</h4>
+    </div>
+    {% include "navbar.html" %}
+
+    <br>
+    <img src="https://i.pinimg.com/originals/a6/8a/df/a68adf8d4a27c51459f3dead0cb3393a.gif">
+{% endblock%}

@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='stylePosts.css')}}">
+{% extends "perry.html" %}
+{% block  titulo%} Posts  {% endblock%}
+{% block  body%}
+
+<h1>Postagens Recentes</h1>
+        {% for post, user in posts %}
+        <div class="post">
+            <ul>
+                <h2> {{ user.username }}</h2>
+                <p>{{ post.post_Text }}</p>
+                <img class="img-thumbnail rounded" src="{{ url_for('static', filename='fotos_dos_posts/{}'.format(post.post_image)) }}", width="500px", height="500px">
+            </ul>
+        </div>
+        {% endfor %}
+{% endblock%}

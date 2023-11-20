@@ -1,0 +1,18 @@
+body{
+    text-align: center;
+    background-color: #87CEFA;
+}
+
+
+.titulo{
+    background-color: blue;
+    color: white;
+    font-family: "Book Antiqua";
+    box-shadow: 5px 5px 5px black;
+}
+
+img{
+    border: 10px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gold;
+}

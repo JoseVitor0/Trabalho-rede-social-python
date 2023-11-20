@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styleLogin.css') }}">
+{% extends "perry.html" %}
+ {% block  titulo%} Login  {% endblock%}
+{% block  body%}
+
+
+
+    <h2>Login</h2>
+    <div class="container">
+        <div class="formulario">
+            <form method="POST">
+            {{ form.csrf_token }}
+
+            <label>Usuário: </label>
+            {{ form.username }}
+
+            <br>
+            <label>Senha: </label>
+            {{ form.password }}
+
+            <br>
+                <div class="btn">
+                    {{ form.btn }}
+                </div>
+            </form>
+
+
+    <h3>Não tem conta? Registre-se agora mesmo:</h3>
+
+    <a href="{{ url_for('createAccount') }}">Registrar</a>
+        </div>
+    <div class="messi">
+    <img src="https://s2-oglobo.glbimg.com/OKICICyAXUXQosu1B7YvaogQVNs=/0x0:3360x2240/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/S/p/r4UmEbRPqhbEeBnOUmng/104868990-topshot-inter-miami-cfs-argentine-forward-lionel-messi-receives-his-8th-ballon-dor.jpg">
+    </div>
+    </div>
+{% endblock%}

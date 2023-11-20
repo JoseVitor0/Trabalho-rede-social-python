@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styleReg.css') }}">
+{% extends "perry.html" %}
+
+{% block  body%}
+    
+
+    <h2>Criar Conta</h2>
+    <div class="container">
+        <div class="formulario">
+    <form method="POST">
+    {{ form.csrf_token }}
+
+     <label>Email: </label>
+        {{ form.email }}
+        <br>
+    <label>Usuário: </label>
+    {{ form.username }}
+
+    <br>
+    <label>Senha: </label>
+    {{ form.password }}
+    <br>
+
+    <label>Confirmar Senha: </label>
+        {{ form.confirmpassword }}
+        
+    <br>
+    {{ form.btn }}
+    </form>
+<h3>Registrado? Faça Login:</h3>
+    <a href="{{ url_for('login') }}">login</a>
+<br>
+            </div>
+        <div class="messi">
+            <img src="https://media.tenor.com/mZx1fN9sNCoAAAAd/messi.gif">
+        </div>
+        </div>
+{% endblock%}

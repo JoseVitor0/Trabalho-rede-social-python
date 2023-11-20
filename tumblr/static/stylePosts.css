@@ -1,0 +1,11 @@
+body{
+    padding: 30px 30px;
+}
+
+.post{
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 10px;
+    width: 700px;
+    margin-bottom: 70px;
+}
